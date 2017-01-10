@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+	.red {
+		color: red;
+	}
+</style>
+</head>
+<body>
+<div id="box"></div>
+<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+<!--记住这个babel  和MVC那个差不多-->
+<script type="text/babel">
+	/*var H1 = React.createClass({
+		render:function(){
+			return (
+				<div className="red">
+					你好!世界!!!
+				</div>
+			)
+		}
+	})
+	
+	ReactDOM.render(
+		<H1 />,
+		document.getElementById("box")
+	)*/
+	
+	ReactDOM.render($
+		<div className="red">
+			你好!世界!
+		</div>,
+		document.getElementById("box")
+	);
+</script>
+</body>
+</html>

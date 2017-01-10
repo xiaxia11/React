@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<!--<input type="button" value="按钮"/>-->
+<div id="box"></div>
+<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/babel">
+	var Text = React.createClass({
+		getInitialState:function(){
+			//console.log(this.props.arr)
+			return{
+				arr:this.props.arr,
+				num:this.props.num
+			}
+		},
+		click:function(){
+			this.state.num++,
+			this.state.arr.push(<Li num={this.state.num} key={this.state.num}/>);
+			this.setState({
+				arr:this.state.arr,
+				num:this.state.num
+			})
+		},
+		render:function(){
+			console.log(this.state.arr)
+			return(
+				<div>
+					<input type="button" defaultValue="按钮" onClick={this.click}/>
+					<ul>
+						{this.state.arr}
+					</ul>
+				</div>
+			)
+		}
+	})
+	
+	var Li = React.createClass({
+		render:function(){
+			return(
+				<li>{this.props.num}</li>
+			)
+		}
+	})
+	var data = {
+		arr:[],
+		num:0
+	}
+	ReactDOM.render(
+		<Text {...data}/>,
+		document.getElementById("box")
+	)
+</script>
+</body>
+</html>

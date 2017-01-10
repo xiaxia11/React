@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style>
+.red {
+	color: red;
+}
+</style>
+</head>
+<body>
+<div id="box"></div>
+<script src="js/react.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/react-dom.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+	var H2 = React.createElement('h1',{className:'red'},'HELLO');
+	ReactDOM.render(
+		H2,
+		document.getElementById('box'),
+		function(){
+			console.log('加载完成');
+		}
+	);
+	
+</script>
+</body>
+</html>
